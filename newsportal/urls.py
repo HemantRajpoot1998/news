@@ -16,8 +16,9 @@ urlpatterns = [
     path('', include('manager.urls')),       # here manager is an app name
     path('', include('newsletter.urls')),       # here newsletter is an app name
     path('', include('comment.urls')),       # here comment is an app name
-    path('', include('blacklist.urls')),       # here blacklist is an app name (for IP)
-]
+    path('', include('blacklist.urls')),
+    # here blacklist is an app name (for IP)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
